@@ -17,6 +17,7 @@ export const Navbar = ({ onOpenBooking, onOpenSearch, onOpenUser }: NavbarProps)
   const navLinks = [
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'Servicios', href: '/#value-proposition' },
+    { name: 'Cambios', href: '/#changes' },
     { name: 'Contacto', href: '/#faq-contact' },
   ];
 

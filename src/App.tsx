@@ -244,6 +244,65 @@ function Home() {
         </div>
       </Section>
 
+      {/* 5.5. CHANGES / UPDATES SECTION */}
+      <Section id="changes" className="bg-silver-900/30 border-y border-white/5">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center space-y-8 mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/[0.02] text-[10px] uppercase tracking-[0.3em] text-silver-400">
+              <Sparkles className="w-3 h-3 text-silver-400" /> Últimas Novedades
+            </div>
+            <h2 className="text-4xl md:text-5xl font-serif text-silver-50">Cambios Recientes</h2>
+            <p className="text-silver-400 font-light">
+              Mantente al día con las últimas actualizaciones y mejoras en mis servicios.
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            {[
+              {
+                date: "Enero 2026",
+                title: "Nuevo Estudio en Sevilla",
+                description: "Ampliación de instalaciones con equipo de última generación para sesiones indoor de alta calidad.",
+                type: "feature"
+              },
+              {
+                date: "Diciembre 2025",
+                title: "Cobertura Nacional",
+                description: "Ahora ofrezco servicios de fotografía en cualquier lugar de España con desplazamiento incluido.",
+                type: "improvement"
+              },
+              {
+                date: "Noviembre 2025",
+                title: "Entrega Digital Instantánea",
+                description: "Galerías online privadas disponibles 24 horas después de la sesión para vista previa.",
+                type: "feature"
+              }
+            ].map((change, i) => (
+              <div key={i} className="flex gap-8 p-8 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-silver-400/10 border border-silver-400/20 flex items-center justify-center">
+                    <Sparkles className="w-5 h-5 text-silver-400" />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-4">
+                    <span className="text-[10px] uppercase tracking-widest text-silver-500 font-bold">{change.date}</span>
+                    <span className={cn(
+                      "px-2 py-1 text-[8px] uppercase tracking-widest rounded-full",
+                      change.type === 'feature' ? "bg-green-500/10 text-green-400 border border-green-500/20" : "bg-blue-500/10 text-blue-400 border border-blue-500/20"
+                    )}>
+                      {change.type === 'feature' ? 'Nueva Función' : 'Mejora'}
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-silver-50">{change.title}</h3>
+                  <p className="text-sm text-silver-400 leading-relaxed">{change.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
       {/* 5. FAQ & CONTACT SECTION (MATCHING REFERENCE) */}
       <Section id="faq-contact" className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
